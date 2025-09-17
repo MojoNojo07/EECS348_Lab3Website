@@ -2,4 +2,23 @@
     <head>
         <link rel="stylesheet" href="style.css">
     </head>
+
+    <body>
+        <div id="the-woag">woag</div>
+
+        <div>
+            This is where you control the woag. <br>
+            <input type="range" id="border-size" min="0" max="20">
+        </div>
+
+
+
+        
+        <script>
+            document.getElementById("border-size").oninput = function () {
+                weight = document.getElementById("border-size").value;
+                document.getElementById("the-woag").style.borderWidth = weight;
+            }
+        </script>
+    </body>
 </html>
