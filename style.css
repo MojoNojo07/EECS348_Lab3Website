@@ -7,6 +7,14 @@
     }
 }
 
+@keyframes bounce {
+    from {
+
+    } to {
+        transform:translateY(-15px)
+    }
+}
+
 body {
     font-family:'Courier New', Courier, monospace;
     background-color: black;
@@ -60,6 +68,14 @@ table {
     border-collapse: collapse;
     color:white;
     text-align:center;
+}
+
+.shrimp:hover {
+    animation-name:bounce;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
 }
 
 th {
