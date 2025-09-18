@@ -5,11 +5,10 @@
     </head>
 
     <body>
-        
-        <div id="the-woag" class="the-woag">woag</div>
+        <div id="title"><h1>Font Control</h1></div>
         
         <div>
-            This is where you control the woag. <br>
+            This is where you control the title. <br>
             <br>
             Border width: <br>
             <input type="range" id="border-size" min="0" max="20"> <br>
@@ -31,7 +30,7 @@
         <script>
             document.getElementById("border-size").oninput = function() {
                 weight = document.getElementById("border-size").value;
-                document.getElementById("the-woag").style.borderWidth = weight.toString() + "px";
+                document.getElementById("title").style.borderWidth = weight.toString() + "px";
             }
 
             document.getElementById("red").oninput = function() { 
@@ -51,8 +50,8 @@
                 green = document.getElementById("green").value.toString()
                 blue = document.getElementById("blue").value.toString()
                 rgb_out = "rgb(" + red + ", " + green + ", " + blue + ")"
-                document.getElementById("the-woag").style.color = rgb_out;
-                document.getElementById("the-woag").style.borderColor = rgb_out;
+                document.getElementById("title").style.color = rgb_out;
+                document.getElementById("title").style.borderColor = rgb_out;
             }
         </script>
     </body>
