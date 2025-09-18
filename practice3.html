@@ -3,4 +3,67 @@
     <head>
         <link rel="stylesheet" href="style.css">
     </head>
+
+    <body>
+        <div id="title"><h1>Password Confirmation</h1></div>
+        <div>
+            Input your password: <br>
+            <input type="text" id="password" value=""> <br>
+            <p id="char-minimum">Password must be at least 8 characters.</p>
+
+            <br>
+            Confirm your password: <br>
+            <input type="text" id="password-confirm" value=""> <br>
+            <p id="pw-match">Passwords do not match.</p>
+        </div>
+
+        <div class="button_container">
+            <a href="index.html"><div class="button">&lt;&lt; Return home</div></a>
+        </div>
+
+        <script>
+            Password_box = document.getElementById("password")
+            Password_confirm_box = document.getElementById("password-confirm")
+            Character_minimum_text = document.getElementById("char-minimum")
+            Password_confirm_text = document.getElementById("pw-match")
+            password = Password_box.value.toString()
+            password_confirm = Password_confirm_box.value.toString()
+
+            Password_box.oninput = function() {
+                password = Password_box.value.toString()
+                console.log(password)
+                if(password.length < 8) {
+                    Character_minimum_text.innerText = "Password must be at least 8 characters."
+                } else {
+                    Character_minimum_text.innerText = "Password is good!"
+                }
+            }
+
+            Password_confirm_box.oninput = function() {
+                password_confirm = Password_confirm_box.value.toString()
+                if (password_confirm == password) {
+                    Password_confirm_text.innerText = "Passwords match!"
+                } else {
+                    Password_confirm_text.innerText = "Passwords do not match."
+                }
+            }
+
+            function pw_update() {
+                password = Password_box.value.toString()
+                console.log(password)
+                if(password.length < 8) {
+                    Character_minimum_text.innerText = "Password must be at least 8 characters."
+                } else {
+                    Character_minimum_text.innerText = "Password is long enough!"
+                }
+
+                password_confirm = Password_confirm_box.value.toString()
+                if (password_confirm == password) {
+                    Password_confirm_text.innerText = "Passwords match!"
+                } else {
+                    Password_confirm_text.innerText = "Passwords do not match."
+                }
+            }
+        </script>
+    </body>
 </html>
