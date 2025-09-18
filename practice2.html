@@ -6,23 +6,53 @@
 
     <body>
         
-        <div id="the-woag">woag</div>
+        <div id="the-woag" class="the-woag">woag</div>
         
         <div>
             This is where you control the woag. <br>
-            <input type="range" id="border-size" min="0" max="20">
+            <br>
+            Border width: <br>
+            <input type="range" id="border-size" min="0" max="20"> <br>
+            <br>
+            Color: <br>
+            R: <input id="red" type="number" min="0" max="255" value="128">
+            G: <input id="green" type="number" min="0" max="255" value="0">
+            B: <input id="blue" type="number" min="0" max="255" value="128">
         </div>
         
         
         <div class="button_container">
             <a href="index.html"><div class="button">&lt;&lt; Return home</div></a>
         </div>
+
+
         
         
         <script>
-            document.getElementById("border-size").oninput = function () {
+            document.getElementById("border-size").oninput = function() {
                 weight = document.getElementById("border-size").value;
-                document.getElementById("the-woag").style.borderWidth = weight;
+                document.getElementById("the-woag").style.borderWidth = weight.toString() + "px";
+            }
+
+            document.getElementById("red").oninput = function() { 
+                update_rgb()
+            }
+
+            document.getElementById("green").oninput = function() { 
+                update_rgb()
+            }
+
+            document.getElementById("blue").oninput = function() { 
+                update_rgb()
+            }
+
+            function update_rgb() {
+                red = document.getElementById("red").value.toString()
+                green = document.getElementById("green").value.toString()
+                blue = document.getElementById("blue").value.toString()
+                rgb_out = "rgb(" + red + ", " + green + ", " + blue + ")"
+                document.getElementById("the-woag").style.color = rgb_out;
+                document.getElementById("the-woag").style.borderColor = rgb_out;
             }
         </script>
     </body>

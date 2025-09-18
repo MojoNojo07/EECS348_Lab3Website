@@ -73,3 +73,7 @@ a:visited {
 a {
     color:lightgray
 }
+
+.the-woag { 
+    font-kerning: auto;
+}
